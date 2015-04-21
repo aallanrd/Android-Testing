@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">U+</string>
+
+
+    <string name="title_section1">UCR</string>
+    <string name="title_section2">UNA</string>
+    <string name="title_section3">ITCR</string>
+
+    <string name="hello_world">Hello world!</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="dummy_section_text">Section %1d is just a dummy section.</string>
+
+    <string name="demo_external_activity">Iniciar Sesión</string>
+    <string name="demo_collection">Objetos Perdidos</string>
+
+</resources>
