@@ -87,6 +87,8 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="appcompat-v7-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="ojdbc7" level="project" />
+    <orderEntry type="library" exported="" name="temboo-android-sdk-core-2.9.0" level="project" />
+    <orderEntry type="library" exported="" name="Google-2.9.0" level="project" />
     <orderEntry type="library" exported="" name="support-v4-22.0.0" level="project" />
     <orderEntry type="library" exported="" name="support-annotations-22.0.0" level="project" />
   </component>

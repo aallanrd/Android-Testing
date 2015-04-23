@@ -30,6 +30,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.lateralis.u.GoogleGeo.GmailTask;
+import com.lateralis.u.Test_Fragments.Fragment_GeoCode;
+
 public class MainActivity extends FragmentActivity implements ActionBar.TabListener {
 
     /**
@@ -124,11 +127,12 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
                 default:
                     // The other sections of the app are dummy placeholders.
-                    Fragment fragment = new DummySectionFragment();
-                    Bundle args = new Bundle();
-                    args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
-                    fragment.setArguments(args);
-                    return fragment;
+                   // Fragment fragment = new DummySectionFragment();
+                   // Bundle args = new Bundle();
+                   // args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, i + 1);
+                   // fragment.setArguments(args);
+                   // return fragment;
+                    return new Fragment_GeoCode();
             }
         }
 
@@ -163,6 +167,14 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
                         }
                     });
 
+            rootView.findViewById(R.id.btngmail)
+                    .setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            new GmailTask().execute();
+                        }
+                    });
+
             // Demonstration of navigating to external activities.
             rootView.findViewById(R.id.demo_external_activity)
                     .setOnClickListener(new View.OnClickListener() {
@@ -194,7 +206,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_section_dummy, container, false);
+            View rootView = inflater.inflate(R.layout.fragment_geo_code, container, false);
             Bundle args = getArguments();
             ((TextView) rootView.findViewById(android.R.id.text1)).setText(
                     getString(R.string.dummy_section_text, args.getInt(ARG_SECTION_NUMBER)));
