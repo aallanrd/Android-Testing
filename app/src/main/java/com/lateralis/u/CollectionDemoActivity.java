@@ -32,6 +32,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import com.lateralis.u.Test_Fragments.test;
+
 public class CollectionDemoActivity extends FragmentActivity {
 
     /**
@@ -109,11 +111,17 @@ public class CollectionDemoActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int i) {
-            Fragment fragment = new DemoObjectFragment();
-            Bundle args = new Bundle();
-            args.putInt(DemoObjectFragment.ARG_OBJECT, i + 1); // Our object is just an integer :-P
-            fragment.setArguments(args);
-            return fragment;
+
+
+
+                    Fragment fragment3 = new test();
+                 // Bundle args2 = new Bundle();
+                  //  args2.putInt(DemoObjectFragment.ARG_OBJECT, i + 1); // Our object is just an integer :-P
+                   // fragment3.setArguments(args2);
+                    return fragment3;
+
+
+
         }
 
         @Override
@@ -134,14 +142,20 @@ public class CollectionDemoActivity extends FragmentActivity {
     public static class DemoObjectFragment extends Fragment {
 
         public static final String ARG_OBJECT = "Objeto";
-
+        public TextView text;
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                 Bundle savedInstanceState) {
-            View rootView = inflater.inflate(R.layout.fragment_collection_object, container, false);
+            final View rootView = inflater.inflate(R.layout.fragment_test, container, false);
             Bundle args = getArguments();
-            ((TextView) rootView.findViewById(android.R.id.text1)).setText(
-                    Integer.toString(args.getInt(ARG_OBJECT)));
+
+            text = ((TextView) rootView.findViewById(android.R.id.text1));
+            text.setText(Integer.toString(args.getInt(ARG_OBJECT)));
+
+
+
+
+
             return rootView;
         }
     }
